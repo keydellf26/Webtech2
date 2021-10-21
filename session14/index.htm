@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MIS3690 Survey</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style>
+      td {
+        padding-right: 40px;
+      }
+
+  
+    </style>
+
+    <script>
+
+function processForm()
+{	
+	if (document.getElementById("fname").value=="")
+	{
+		alert("First name is required");
+		document.getElementById("fname").focus();
+	}
+  else if (document.getElementById("lname").value=="")
+  {
+    alert("Last name is required");
+		document.getElementById("lname").focus();
+
+  }
+  else if (document.getElementById("images").value == "" ||document.getElementById("Forms").value == "" || document.getElementById("CSS").value == "" || document.getElementById("Tables").value == "" )
+  {
+    alert("Fun topic is required");
+  }
+
+	else
+	{
+		return true;
+	}
+	return false;
+
+}
+
+
+
+      var bleep = new Audio();
+      bleep.src = "Attack.mp3";
+    </script>
+  </head>
+  <body>
+    <h1>MIS3690 Student Survey</h1>
+    <p>
+      Please complete the following survey. You must answer each question. When
+      you are done, please click on the Submit button.
+    </p>
+
+    <form method="post" action="http://wtspring13sec2.babson.edu/gordon/mailer.php" onsubmit="return processForm()">
+      <table>
+        <tr>
+          <td>
+            <p>
+              First Name<input id="fname"
+                type="text"
+                name="fname"
+                maxlength="100"
+              />
+            </p>
+          </td>
+          <td>
+            <p>
+              Last Name<input  id="lname"
+                type="text"
+                name="lastname"
+                maxlength="100"
+                value=""
+              />
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        Gender: Male <input type="radio" name="gender" value="male" /> Female
+        <input type="radio" name="gender" value="female" /> Attack Helicopter
+        <input
+          type="radio"
+          name="gender"
+          value="Attack Helicopter"
+          onmousedown="bleep.play()"
+        />
+      </p>
+	  <br />
+      <p>
+        What grade do you expect to recieve?
+        <select name="D1">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+        </select>
+      </p>
+	  <table>
+
+	  
+      <p>
+	<tr> 
+		<td>
+        	What topics did you find to be fun?<br /> 
+		</td>
+
+		<td>	
+        <input id="images" type="checkbox" name="Img" value="Images" /> Images<br /><input  id="CSS" type="checkbox" name="CSS" value="CSS"/> CSS <br /><input  id="Tables" type="checkbox" name="Tables" value="tables" /> Tables <br/> <input id="Forms" type="checkbox" name="Forms" value="Forms" /> Forms  </p>
+		</td>
+	</tr>
+
+	</table>
+<p> Please add any comments you have <br/>
+	<textarea name="comments" rows="5" cols="50"></textarea>
+
+</p>
+
+<br/> 
+
+<input type="submit" value="Submit" name="Submit" style = "margin-right: 40px;"  />      <input type="reset" value="Reset" name="Reset" />
+
+    </form>
+  </body>
+</html>
