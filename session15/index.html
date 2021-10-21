@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>JS Branching In-Class Activity</title>
+<style>
+
+button{
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+}
+
+</style>
+	<script>
+
+		var message = new Array("Click Me", "Move Me", "Click Here", "Button", "Next");
+
+		function l()
+		{
+		var x=Math.floor(Math.random()*501);
+		var y=Math.floor(Math.random()*501);
+		document.getElementById("c").style.left = x +"px";
+		document.getElementById("c").style.top = y +"px";
+		
+	
+
+		 var messageNumber=Math.floor(Math.random()*message.length); 
+
+		document.getElementById("c").innerHTML=message[messageNumber];
+
+		
+		}
+
+
+
+
+
+
+
+
+
+	</script>
+  </head>
+
+  <body>
+	<button id="c" onclick="l()">Click Me!</button>
+</body>
+</html>
