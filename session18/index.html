@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Canvas Example</title>
+
+	<style>
+        canvas { border: 1px solid black; }
+        
+	</style>
+	
+	<script>
+      function drawShape(){
+          // get the canvas element using the DOM
+		var canvas = document.getElementById('tutorial');
+        // use getContext to use the canvas for drawing
+        var ctx = canvas.getContext('2d');
+		// Draw shapes
+      ctx.beginPath();
+			ctx.arc(75,75,50,0,Math.PI*2,true); // Outer circle
+			ctx.fillStyle="yellow";
+			ctx.fill();
+      ctx.fillStyle = "green";
+      ctx.fillRect(0,600,500,100); 
+      ctx.fillStyle = "#143C1D";
+      ctx.fillRect(250,530,30,70); 
+      ctx.fillStyle = "#80FF9E";
+      ctx.fillRect(280,550,50,20); 
+      ctx.fillRect(200,550,50,20); 
+      ctx.beginPath();
+			ctx.arc(265,500,35,0,Math.PI*2,true); // Outer circle
+			ctx.fillStyle="yellow";
+			ctx.fill();
+
+      ctx.beginPath();
+			ctx.arc(265,500,15,0,Math.PI*2,true); // Outer circle
+			ctx.fillStyle="white";
+			ctx.fill();
+		}
+  
+	</script>
+  </head>
+
+  <body onload="drawShape()">
+     <canvas id="tutorial" width="500" height="700"></canvas>
+  </body>
+</html>
