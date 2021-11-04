@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Canvas Example</title>
+
+	<style>
+      
+        
+	</style>
+	
+	<script>
+
+
+var curDate = new Date();  //Sets the date/time when the page loads
+
+function calcbd()
+{
+    // Get birthday month from the form.  Call it m.
+    var m = document.getElementById("mo").value - 1;  
+    // Get birthday day from the form.  Call it d.
+    var d= document.getElementById("day").value;
+    // Get birthday day from the form.  Call it d.
+    var y= document.getElementById("year").value;
+    
+    // Create variable birthday as your birthday this year
+    var curYear = curDate.getFullYear()
+    var birthdate = new Date(y,m,d)
+
+    // Calculate how many milliseconds til your birthday this year (negative if birthday is past)
+    var dif = birthdate - curDate
+
+    // If you've already had your birthday, calculate milliseconds til your birthday next year
+    if (dif < 0)
+    {
+        birthdate = new Date(y, m, d)
+        dif = curDate - birthdate
+    }
+
+    // Convert milliseconds to days.  Dif is how many days to your next birthday
+    dif = dif/(60*60*24*1000)
+    // Drop the fraction and add 1 (if there are 0.8 days to your birthday, it is really 1 day)
+    dif = 1+Math.floor(dif);
+
+    dif = dif/365;
+
+    dif = Math.floor(dif);
+    
+    // Put the answer on the page between the <span> and </span>
+    document.getElementById("answer").innerHTML = dif
+}
+
+</script>
+</head>
+
+<body>
+<p>Enter your when you were born</p>
+<p>    Year <input type="text" name="day" id="year" size="2" />&nbsp;&nbsp;&nbsp;&nbsp;
+
+    
+    Month <input type="text" name="mo" id="mo" size="2" />&nbsp;&nbsp;&nbsp;&nbsp;
+    Day <input type="text" name="day" id="day" size="2" />
+
+</p>
+<p><button type="button" onclick="calcbd()">Calculate</button></p>
+<p>I am <span id="answer"></span> years old.</p>
+</body>
+</html>

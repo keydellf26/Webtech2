@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />	
+<title>Cookie User</title>
+<script>
+
+	function readCookie(cName)
+	{
+		c=document.cookie
+		//Find the start of the desired cookie
+		var s=c.indexOf(cName)
+		//Cut the cookie string at the start of the desired cookie
+		var cs=c.substring(s)
+		//If multiple cookies, find the end of the desired cookie
+		var e=cs.indexOf(";")
+		//If there are multiple cookies, cut off the others
+		if (e != -1) {
+			cs = cs.substring(0,e)
+		}
+		//Find and return the value of the desired cookie
+		cookieParts=cs.split("=")
+		return cookieParts[1]
+	}
+
+
+	function setPrefs()
+	{
+	    mybody=document.getElementById("bodytag");
+	    mybody.style.backgroundColor = readCookie("bgColor");
+	    mybody.style.color = readCookie("fgColor");
+	}
+
+</script>
+</head>
+
+<body id="bodytag" onload="setPrefs();">
+	<h1>Hello World</h1>
+</body>
+</html>

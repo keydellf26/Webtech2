@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Canvas Example</title>
+
+	<style>
+      
+        
+	</style>
+	
+	<script>
+ /*   function setCookie(cName, cValue)
+	{
+		//Get today's date
+		var today = new Date()
+		
+		//Create a date 1 year from now
+		var expireDate = 
+		     new Date(today.getFullYear()+1, today.getMonth(), today.getDate())
+		
+		//Create a new cookie that exprires a year from now
+		document.cookie = cName + "=" + cValue + 
+			";expires="+ expireDate.toGMTString() 
+	} */
+
+				
+	function savePrefs()
+	{
+        var mytime = document.getElementById("time");
+		var today=new Date();
+		var h=today.getHours();
+		var m=today.getMinutes();
+		var d=today.toDateString();
+		document.getElementById("date").innerHTML = d;
+		// add a zero in front of minutes < 10
+		if (m < 10)
+		{
+			m = "0"+m
+		}
+        
+        // display the time as AM or PM and the hour as 12 if it's 0
+		if (h == 0)
+		{
+			timeString = "12:" + m + " AM"
+		}
+		else if (h < 12)
+		{
+			timeString = h+":"+m+" AM"
+		}
+		else if (h == 12)
+		{
+			timeString = "12:"+m+" PM"
+		}
+		else
+		{
+			timeString = (h-12) + ":" + m + " PM"
+		}
+        document.getElementById("time").innerHTML = timeString;
+		setTimeout("showDateTime()",60000);
+
+        var expireDate = 
+		     new Date(today.getFullYear()+1, today.getMonth(), today.getDate())
+		
+		//Create a new cookie that exprires a year from now
+		document.cookie = cName + "=" + cValue + 
+			";expires="+ expireDate.toGMTString() 
+	}
+	</script>
+</head>
+
+<body onload="savePrefs()">
+  <!-- <form action="none">
+	<table>
+		<tr>
+			<td>Background Color</td>
+			<td>
+			   <select id="pickBgColor">
+			   <option value="red">Red</option>
+			   <option value="white">White</option>
+			   <option value="blue">Blue</option>
+			   <option value="green">Green</option>
+			   </select>
+			</td>
+		</tr>
+		<tr>
+			<td>Font Color</td>
+			<td>
+			   <select id="pickColor">
+			   <option value="white">White</option>
+			   <option value="black">Black</option>
+			   <option value="yellow">Yellow</option>
+			   </select>
+			</td>
+		</tr>
+	</table>
+	<p><button type="button" onclick="savePrefs();">Set Preferences</button></p>
+   </form> --> 
+
+   
+	<h2>Today's date is <span id="date"></span></h2>
+	<h2>The current time is <span id="time"></span></h2>
+</body>
+</html>
