@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+<head>
+	<title>Fall 2021 Assignment 2</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<style>
+		p, select, input, button {font-size:16pt}
+		h1 {text-align:center}
+		body {width:900px;}
+	</style>
+	
+	<script>
+	/* Your JavaScript goes here */
+
+	var message = new Array("Links", "Images", "Arrays", "Animation");
+
+	function one()
+		{
+			if(document.getElementById("honor").style.backgroundColor = "none")
+			
+			document.getElementById("honor").style.backgroundColor = "pink";
+
+			document.getElementById("bet").style.fontStyle = "italic";
+
+			document.getElementById("nice").innerHTML = "Kindly";
+			}
+		function undo()
+		{
+			
+			document.getElementById("honor").style.backgroundColor = "transparent";
+			document.getElementById("bet").style.fontStyle = "normal";
+
+			document.getElementById("nice").innerHTML = "Please";
+
+			
+		}
+		function load()
+		{
+
+		var messageNumber=Math.floor(Math.random()*message.length); 
+
+		document.getElementById("c").innerHTML=message[messageNumber];
+
+		}
+	
+
+		var imageList = new Array("frown.jpg","smile.jpg")  //filenames of pictures
+
+		function tuff()
+		{
+			document.getElementById("feeling").innerHTML= "difficult";
+			document.getElementById("image1").src=imageList[0]   // Show the picture from the list
+
+		
+	}
+
+	function don()
+		{
+
+			if(document.getElementById("sell").value == "S")
+			{
+
+				alert("You must select a grade :/");
+				return false
+			}
+		     if(document.getElementById("GPA").value > 4 || document.getElementById("GPA").value == 0)
+			{
+				alert("You're not that guy... GPA must be below or equal to 4");
+				return false
+			}
+
+		else
+		{
+			return true
+		}
+		}
+
+		var opacity=1
+		var timer = null;
+
+		function startanimation()
+		{
+			if(!timer) timer = setInterval("trippy()", 200)
+
+		}
+
+		function stopani() 
+		{
+			if (!timer) return false;
+			clearInterval(timer);
+			timer = null;
+		}
+		
+		function trippy()
+			{
+
+				opacity = opacity - .05
+				document.getElementById("gpp").style.opacity = opacity
+				if(document.getElementById("gpp").style.opacity <= 0.3) 
+				{
+					stopani()
+				}
+		
+			}
+
+			function lol()
+		{
+
+		document.getElementById("feeling").innerHTML= "fun";
+		document.getElementById("image1").src=imageList[1]   // Show the picture from the list
+
+		}
+
+	</script>	
+</head>
+<body onload="load()">
+	<h1>OIM3690 <span id = "lit" onmouseover="one()" onmouseout="undo()"> Student  </span> Survey  </h1>	
+	<p> <span id = "nice"> Please </span> complete the following survey.  When you are done,
+	    click the Submit button.
+	</p>
+	<form method="post" action="http://wtspring13sec2.babson.edu/gordon/mailer.php" onsubmit= "return don()">
+	   <p>What do you want the next question to be about? &nbsp;&nbsp;&nbsp;Fun 
+		<input type="radio" name="q" value="F" checked="checked" onclick="lol()" />&nbsp;&nbsp;Difficulty 
+		<input type="radio" name="q" value="D" onclick="tuff()" />
+		<img src="smile.jpg" alt="mood" id="image1" style="width:30px; margin-left:40px" />
+	   </p>
+	   <p>Which topics were <span id = 
+		"feeling">fun</span>?&nbsp;&nbsp;&nbsp;
+		CSS <input type="checkbox" name="fun1" value="c" />&nbsp;&nbsp;&nbsp;&nbsp;
+		Forms <input type="checkbox" name="fun2" value="f" />&nbsp;&nbsp;&nbsp;&nbsp;
+        Hot spots <input type="checkbox" name="fun3" value="h" />&nbsp;&nbsp;&nbsp;&nbsp;  
+		<span id = "c"> Tables </span> <input type="checkbox" name="fun4" value="t" />
+			   </p>
+	   <p>What grade do you expect to receive? 
+		<select id ="sell"  name="grade">
+			<option value="S">Select Grade</option>
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+			<option value="D">D</option>
+			<option value="F">F</option>
+		</select>
+	</p>
+	<p>Enter your <span id = "gpp"> GPA</span>: <input type="text" name="gpa" size="4" id = "GPA"  onfocus="startanimation()"/></p>
+	<p style="margin-left:300px">
+		<input type="submit" name="submit" value="Submit" id ="sub" onclick="don()" />&nbsp;&nbsp;
+		<input type="reset" name="reset" value="Reset" />
+	</p>
+
+	</form>
+	<p id= "honor"> I, Keydell Fuller, have abided by the Babson Code of Ethics in this work and pledge to be <span id = "bet" > better </span> than that which would compromise my integrity.</p>
+</body>
+</html>
