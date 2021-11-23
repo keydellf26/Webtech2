@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title> 
+  <!--  Bootstrap2.htm -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <script>
+
+
+$(function(){
+	   // jQuery methods go here...
+     $("#rocket").text("This is paragraph #1");
+
+    
+ 
+  
+		});
+
+    $(function(){
+	   // jQuery methods go here...
+     $("#lol").click(function(){
+
+    
+    $("#lol").attr("src", "Logo 1.jpg");
+  
+		})
+
+  });
+
+
+
+  </script>
+
+
+  <style>
+    img {
+width: 200px; 
+height: 200px;
+
+    }
+
+  </style>
+</head>
+<body onload="">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="navbar-header">
+    <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+    <li class="active"><a href="#">Home</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+      <li><a href="#">Page 1-1</a></li>
+      <li><a href="#">Page 1-2</a></li>
+      <li><a href="#">Page 1-3</a></li>
+      </ul>
+      </li>
+    <li><a href="http://amazon.com">Amazon</a></li>
+    <li><a href="http://babson.com">Babson</a></li>
+    </ul>
+    </div>
+    </nav>
+
+<div class="container">
+  <div class = "jumbotron">
+  <h1>My first Bootstrap website!</h1>
+  <p>This is going to be a subtitle </p>
+</div>
+  <div class ="row"> 
+    <div class = "col-sm-4" style = "background-color: red;"> 
+  <p id = "rocket">This is first paragragh.</p>
+  <p>This is second paragraph.</p>
+</div>
+<div class = "col-sm-6" style = "background-color: blue;"> 
+  <p>This is third paragraph.</p>
+  <p>This is fourth paragraph.</p>
+  </div>
+  <div class = "col-sm-2"  style= "background-color: gold;"> 
+  <p>This is fifth paragraph.</p>
+</div>
+<div class = "row">
+  <div class = "col-sm-4"  style= "background-color: pink;"> 
+  <img  id = "lol" src = "AquidneckFabrication_Logo_FINAL-06.jpg" alt = "Logo">
+  </div>
+  <div class = "col-sm-4"  style= "background-color: silver;"> 
+    <img src = "Logo 1.jpg" alt = "Logo">
+  </div>
+  <div class = "col-sm-4"  style= "background-color: green;"> 
+    <img src = "AquidneckFabrication_Logo_FINAL-06.jpg" alt = "Logo">
+  </div>
+</div>
+</div>
+</div>
+</body>
+</html>
