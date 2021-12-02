@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+
+  <head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<title>Page 2</title>
+
+	<style>
+	/* Your styles go here */
+	img {width:150px; height:100px; margin-left:0px }
+	p {text-align:center}
+    #p1 {width:150px; height:150px; background-color:azure; border:2px solid red}
+	button {margin:23px}
+
+	
+	</style>
+	
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script>
+
+		// <![CDATA[  
+var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  
+if (mobile) {  
+         document.location="page2mobile.htm"
+}
+// ]]>
+
+
+	$(function(){
+	   // jQuery methods go here... 
+	  
+
+	   $( window ).on( "load");
+$("#ele").animate({marginLeft: '420px' }, 3000);
+$("#ele").delay(2000).animate({marginLeft: '0px'}, 3000);
+
+	   /*
+$("#moon").delay (5000).animate({left: '1000px', top: '-500px'}, 4000);
+$("#moon").delay (1000).animate({top: '130px'}, 1000);
+
+$("#paper").show();
+$("#Sell").delay(11000).fadeIn(1000);
+$("#Sell").delay(1000).fadeOut(100);
+$("#paper").delay(10000).fadeOut(1000);
+$("#paper").delay(2100).fadeIn(500);
+
+*/
+		});
+
+		$(function(){
+	   // jQuery methods go here...
+	   $("#one").click(function(){
+
+  $("#one").fadeOut(3000);
+  $("#p1").animate({width: '300px' }, 3000);
+  
+		})
+
+  });
+
+  $(function(){
+	   // jQuery methods go here...
+	   $("#two").click(function(){
+
+  $("#two").fadeOut(3000);
+  $("#p1").delay(3000).animate({height: '300px' }, 3000);
+  
+		})
+
+  });
+
+
+	/* Your additional JavaScript goes here */
+	</script>
+  </head>
+
+  <body>
+	<img src="elephant.jpg" alt="elephant"  id = "ele"  />
+      <p id="p1">Elephant</p>
+	<p><button id = "one">Button 1</button><button id = "two">Button 2</button></p>
+	
+  </body>
+</html>
