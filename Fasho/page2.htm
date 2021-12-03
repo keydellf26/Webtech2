@@ -31,7 +31,7 @@ if (mobile) {
 	   // jQuery methods go here... 
 	  
 
-$( window ).on( "load");
+	   $( window ).on( "load");
 $("#ele").animate({marginLeft: '420px' }, 3000);
 $("#ele").delay(2000).animate({marginLeft: '0px'}, 3000);
 
@@ -50,9 +50,9 @@ $("#paper").delay(2100).fadeIn(500);
 
 		$(function(){
 	   // jQuery methods go here...
-	   $("#uno").click(function(){
+	   $("#one").click(function(){
 
-  $("#uno").fadeOut(3000);
+  $("#one").fadeOut(3000);
   $("#p1").animate({width: '300px' }, 3000);
   
 		})
@@ -61,9 +61,9 @@ $("#paper").delay(2100).fadeIn(500);
 
   $(function(){
 	   // jQuery methods go here...
-	   $("#dos").click(function(){
+	   $("#two").click(function(){
 
-  $("#dos").fadeOut(3000);
+  $("#two").fadeOut(3000);
   $("#p1").delay(3000).animate({height: '300px' }, 3000);
   
 		})
@@ -78,7 +78,7 @@ $("#paper").delay(2100).fadeIn(500);
   <body>
 	<img src="elephant.jpg" alt="elephant"  id = "ele"  />
       <p id="p1">Elephant</p>
-	<p><button id = "uno">Button 1</button><button id = "dos">Button 2</button></p>
+	<p><button id = "one">Button 1</button><button id = "two">Button 2</button></p>
 	
   </body>
 </html>
